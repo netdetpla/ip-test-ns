@@ -4,6 +4,6 @@ ADD ["sources.list", "/etc/apt/"]
 
 RUN apt update && apt install -y fping
 
-ADD ["target/ip-test-ns-1-all.jar", "settings.properties", "/"]
+ADD ["build/libs/ip-test-ns-1-all.jar", "settings.properties", "/"]
 
 CMD java -jar ip-test-ns-1-all.jar
