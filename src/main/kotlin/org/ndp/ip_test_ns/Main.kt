@@ -19,8 +19,7 @@ object Main {
     )
 
     private fun parseParam() {
-        val param = File("/tmp/conf/busi.conf").readText()
-            .replace("\n", "")
+        val param = task!!.param
         val input = File("/input_file")
         logger.debug("params: ")
         logger.debug(param)
@@ -76,6 +75,7 @@ object Main {
         }
         // 执行
         try {
+            parseParam()
             // 获取配置
             val results = execute()
             RedisHandler.produceResult(
